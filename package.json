@@ -1,0 +1,25 @@
+{
+  "name": "ezcss-tailwind",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build:css": "tailwindcss -i ./src/styles.css -o ./public/styles.css",
+    "watch:css": "tailwindcss -i ./src/styles.css -o ./public/styles.css --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/misostack/ezcss-tailwind.git"
+  },
+  "author": "misostack",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/misostack/ezcss-tailwind/issues"
+  },
+  "homepage": "https://github.com/misostack/ezcss-tailwind#readme",
+  "devDependencies": {
+    "autoprefixer": "^10.4.0",
+    "postcss": "^8.4.3",
+    "tailwindcss": "^2.2.19"
+  }
+}
