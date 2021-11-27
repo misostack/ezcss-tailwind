@@ -8,7 +8,7 @@ live-server docs # serving "public" folder
 
 ## Topics
 
-### Installation
+### I.Installation
 
 **Folder structure**
 
@@ -82,3 +82,11 @@ live-server public # serving "public" folder
 ```
 
 **Rename public to docs to allow github page can host your docs folder**
+
+### II.Fonts & Colors
+
+1. Text
+
+```html
+<p class="text-gray-600 text-lg"></p>
+```
