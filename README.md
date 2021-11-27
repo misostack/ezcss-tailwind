@@ -1,5 +1,11 @@
 # Tailwind CSS
 
+## Development
+
+```bash
+live-server docs # serving "public" folder
+```
+
 ## Topics
 
 ### Installation
@@ -74,3 +80,5 @@ NODE_ENV=production npx tailwindcss -i ./src/styles.css -o ./public/styles.css -
 yarn global add live-server
 live-server public # serving "public" folder
 ```
+
+**Rename public to docs to allow github page can host your docs folder**
