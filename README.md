@@ -27,7 +27,7 @@ yarn add -D tailwindcss@latest postcss@latest autoprefixer@latest
 **Init tailwind config**
 
 ```bash
-npx tailwindcss init
+npx tailwindcss init --full
 ```
 
 ```js
