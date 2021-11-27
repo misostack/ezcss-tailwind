@@ -85,8 +85,15 @@ live-server public # serving "public" folder
 
 ### II.Fonts & Colors
 
-1. Text
+- https://tailwindcss.com/docs/text-color
+- https://tailwindcss.com/docs/font-size
 
 ```html
-<p class="text-gray-600 text-lg"></p>
+<p class="text-gray-600 text-lg font-bold uppercase"></p>
+```
+
+### III. Margin, Padding, Borders
+
+```html
+<p class="p-1 px-1 py-0"></p>
 ```
