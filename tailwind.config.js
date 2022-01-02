@@ -6,6 +6,12 @@ module.exports = {
       colors: {
         primary: "#FF6263",
       },
+      fontFamily: {
+        body: ["Open Sans"],
+      },
+      backgroundColor: {
+        primary: "#FF6263",
+      },
     },
   },
   variants: {
