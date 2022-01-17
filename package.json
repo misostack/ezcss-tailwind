@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build:css": "tailwindcss -i ./src/styles.css -o ./docs/styles.css",
-    "watch:css": "tailwindcss -i ./src/styles.css -o ./docs/styles.css --watch"
+    "build:css": "cross-env NODE_ENV=production postcss ./src/styles.css -o ./docs/styles.css",
+    "watch:css": "cross-env NODE_ENV=development postcss ./src/styles.css -o ./docs/styles.css --watch"
   },
   "repository": {
     "type": "git",
@@ -18,8 +18,13 @@
   },
   "homepage": "https://github.com/misostack/ezcss-tailwind#readme",
   "devDependencies": {
-    "autoprefixer": "^10.4.0",
+    "autoprefixer": "^10.4.2",
     "postcss": "^8.4.3",
     "tailwindcss": "^2.2.19"
+  },
+  "dependencies": {
+    "cross-env": "^7.0.3",
+    "cssnano": "^5.0.15",
+    "postcss-cli": "^9.1.0"
   }
 }
