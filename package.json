@@ -4,16 +4,24 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build:dev": "npm-run-all clean:assets:dev build:css:dev watch:css:dev",
-    "build": "npm-run-all clean:assets copy:assets build:css",
-    "start": "browser-sync start --server 'docs'",
-    "start:dev": "browser-sync start --server 'src' --files 'src'",
+    "start": "npm-run-all build server",
+    "serve": "npm-run-all build:dev start:dev",
+    "build:dev": "npm-run-all clean:assets:dev build:css:dev",
+    "build": "npm-run-all clean:assets copy:assets build:styles",
+    "start:dev": "concurrently \"yarn:server:dev\" \"yarn:watch\"",
+    "server": "browser-sync start --server 'docs'",
+    "server:dev": "browser-sync start --server 'src' --files 'src/*.html, src/css/*.css'",
     "clean:assets": "rimraf docs",
     "clean:assets:dev": "rimraf src/assets/css",
     "copy:assets": "yarn copy-files-from-to",
+    "build:styles": "npm-run-all build:sass build:css",
+    "build:styles:dev": "npm-run-all build:sass build:css:dev",
     "build:css": "cross-env NODE_ENV=production postcss ./src/styles --dir ./docs/assets/css --verbose",
     "build:css:dev": "cross-env NODE_ENV=development postcss ./src/styles --dir ./src/assets/css --verbose",
-    "watch:css:dev": "cross-env NODE_ENV=development postcss ./src/styles --dir ./src/assets/css --watch --verbose"
+    "build:sass": "gulp build",
+    "watch": "concurrently \"yarn:watch:css\" \"yarn:watch:sass\"",
+    "watch:sass": "concurrently \"yarn:gulp build\" \"yarn:gulp watch\"",
+    "watch:css": "cross-env NODE_ENV=development postcss ./src/styles --dir ./src/assets/css --watch --verbose"
   },
   "repository": {
     "type": "git",
@@ -30,9 +38,12 @@
     "browser-sync": "^2.27.7",
     "concurrently": "^7.0.0",
     "copy-files-from-to": "^3.2.2",
+    "gulp": "^4.0.2",
+    "gulp-sass": "^5.1.0",
     "npm-run-all": "^4.1.5",
     "postcss": "^8.4.3",
     "rimraf": "^3.0.2",
+    "sass": "^1.49.0",
     "tailwindcss": "^2.2.19"
   },
   "dependencies": {
