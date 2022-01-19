@@ -1,0 +1,25 @@
+{
+  "copyFiles": [
+      // Copy the files matching the "glob" pattern (matching files, along with the their folder structure go into the "to" directory)
+      {
+          "from": "src/assets/images/*.*",
+          "to": {
+            "default": "docs/assets/images"
+          }
+      },
+      // Copy the files matching the "glob" pattern (matching files, along with the their folder structure go into the "to" directory)
+      {
+          "from": "src/*.html",
+          "to": {
+            "default": "docs"
+          }
+      }      
+  ],
+  "copyFilesSettings": {
+      "whenFileExists": "notify-about-available-change",
+      "removeSourceMappingURL": false,
+      "uglifyJs": false,
+      "addReferenceToSourceOfOrigin": false,
+      "ignoreDotFilesAndFolders": true
+  }    
+}

@@ -4,8 +4,16 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build:css": "cross-env NODE_ENV=production postcss ./src/styles.css -o ./docs/styles.css",
-    "watch:css": "cross-env NODE_ENV=development postcss ./src/styles.css -o ./docs/styles.css --watch"
+    "build:dev": "npm-run-all clean:assets:dev build:css:dev watch:css:dev",
+    "build": "npm-run-all clean:assets copy:assets build:css",
+    "start": "browser-sync start --server 'docs'",
+    "start:dev": "browser-sync start --server 'src' --files 'src'",
+    "clean:assets": "rimraf docs",
+    "clean:assets:dev": "rimraf src/assets/css",
+    "copy:assets": "yarn copy-files-from-to",
+    "build:css": "cross-env NODE_ENV=production postcss ./src/styles --dir ./docs/assets/css --verbose",
+    "build:css:dev": "cross-env NODE_ENV=development postcss ./src/styles --dir ./src/assets/css --verbose",
+    "watch:css:dev": "cross-env NODE_ENV=development postcss ./src/styles --dir ./src/assets/css --watch --verbose"
   },
   "repository": {
     "type": "git",
@@ -19,7 +27,12 @@
   "homepage": "https://github.com/misostack/ezcss-tailwind#readme",
   "devDependencies": {
     "autoprefixer": "^10.4.2",
+    "browser-sync": "^2.27.7",
+    "concurrently": "^7.0.0",
+    "copy-files-from-to": "^3.2.2",
+    "npm-run-all": "^4.1.5",
     "postcss": "^8.4.3",
+    "rimraf": "^3.0.2",
     "tailwindcss": "^2.2.19"
   },
   "dependencies": {

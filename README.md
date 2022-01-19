@@ -97,3 +97,7 @@ live-server public # serving "public" folder
 ```html
 <p class="p-1 px-1 py-0"></p>
 ```
+
+### IV. Browser sync
+
+- https://browsersync.io/docs/command-line
