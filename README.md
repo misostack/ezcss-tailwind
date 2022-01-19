@@ -3,7 +3,7 @@
 ## Development
 
 ```bash
-live-server docs # serving "public" folder
+yarn serve
 ```
 
 ## Topics
